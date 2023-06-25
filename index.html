@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dice Roll</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scoreboard">
+      <div>Score: <span id="score">0</span></div>
+      <div>Roll: <span id="roll">0</span></div>
+      <div>Items: <span id="checked">0 / 18</span></div>
+    </div>
+
+    <div class="dice" style="padding-bottom: 0; padding-top: 0;">
+      <div>
+        <button data-die="1" onclick="toggleHold('1');">Hold</button>
+      </div>
+      <div>
+        <button data-die="2" onclick="toggleHold('2');">Hold</button>
+      </div>
+      <div>
+        <button data-die="3" onclick="toggleHold('3');">Hold</button>
+      </div>
+      <div>
+        <button data-die="4" onclick="toggleHold('4');">Hold</button>
+      </div>
+      <div>
+        <button data-die="5" onclick="toggleHold('5');">Hold</button>
+      </div>
+    </div>
+
+    <div class="dice">
+      <ol
+        class="die-list even-roll"
+        data-roll="1"
+        data-color="1"
+        data-hold="false"
+        id="die-1"
+      >
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+      <ol
+        class="die-list odd-roll"
+        data-roll="1"
+        data-color="1"
+        data-hold="false"
+        id="die-2"
+      >
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+      <ol
+        class="die-list odd-roll"
+        data-roll="1"
+        data-color="1"
+        data-hold="false"
+        id="die-3"
+      >
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+      <ol
+        class="die-list even-roll"
+        data-roll="1"
+        data-color="1"
+        data-hold="false"
+        id="die-4"
+      >
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+      <ol
+        class="die-list odd-roll"
+        data-roll="1"
+        data-color="1"
+        data-hold="false"
+        id="die-5"
+      >
+        <li class="die-item" data-side="1">
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="2">
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="3">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="4">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="5">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+        <li class="die-item" data-side="6">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="pointboard">
+      <!-- row 1 -->
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-1"
+        onclick="selectPoints('point-1')"
+      >
+        <button>⚀</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-2"
+        onclick="selectPoints('point-2')"
+      >
+        <button>⚁</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-3"
+        onclick="selectPoints('point-3')"
+      >
+        <button>⚂</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-4"
+        onclick="selectPoints('point-4')"
+      >
+        <button>⚃</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-5"
+        onclick="selectPoints('point-5')"
+      >
+        <button>⚄</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-6"
+        onclick="selectPoints('point-6')"
+      >
+        <button>⚅</button>
+        <div>-</div>
+      </div>
+
+      <!-- row 2 -->
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-3x"
+        onclick="selectPoints('point-3x')"
+      >
+        <button>3x</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-4x"
+        onclick="selectPoints('point-4x')"
+      >
+        <button>4x</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-fh"
+        onclick="selectPoints('point-fh')"
+      >
+        <button>🏠</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-sm"
+        onclick="selectPoints('point-sm')"
+      >
+        <button>↗</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-lg"
+        onclick="selectPoints('point-lg')"
+      >
+        <button>⬈</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-chance"
+        onclick="selectPoints('point-chance')"
+      >
+        <button>?</button>
+        <div>-</div>
+      </div>
+
+      <!-- row 3 -->
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-yahtzee"
+        onclick="selectPoints('point-yahtzee')"
+      >
+        <button>Y!</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-red"
+        onclick="selectPoints('point-red')"
+      >
+        <button>🟥</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-green"
+        onclick="selectPoints('point-green')"
+      >
+        <button>🟩</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-blue"
+        onclick="selectPoints('point-blue')"
+      >
+        <button>🟦</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-color-fh"
+        onclick="selectPoints('point-color-fh')"
+      >
+        <button>FH</button>
+        <div>-</div>
+      </div>
+      <div
+        class="point-item"
+        data-points="-"
+        data-final="false"
+        id="point-top-total"
+      >
+        <button disabled>Top</button>
+        <div>-</div>
+      </div>
+    </div>
+
+    <button type="button" id="roll-button">Start Game</button>
+
+    <div id="gameover" data-show="false">
+      <div class="container">
+        <p>The game is over!</p>
+        <button onclick="restartGame()">New Game</button>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
